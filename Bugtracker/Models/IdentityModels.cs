@@ -16,21 +16,21 @@ namespace Bugtracker.Models
 
         public ApplicationUser()
         {
-            Projects = new HashSet<Projects>();
-            TicketComments = new HashSet<TicketComments>();
-            TicketAttachments = new HashSet<TicketAttachments>();
-            TicketHistories = new HashSet<TicketHistories>();
-            TicketNotifications = new HashSet<TicketNotifications>();
-            //Tickets = new HashSet<Tickets>();
+            this.Projects = new HashSet<Project>();
+            this.TicketComments = new HashSet<TicketComment>();
+            this.TicketAttachments = new HashSet<TicketAttachment>();
+            this.TicketHistories = new HashSet<TicketHistory>();
+            this.TicketNotifications = new HashSet<TicketNotification>();
+            this.Tickets = new HashSet<Ticket>();
 
         }
 
-        public virtual ICollection<Projects> Projects { get; set; }
-        public virtual ICollection<TicketAttachments> TicketAttachments { get; set; }
-       // public virtual ICollection<Tickets> Tickets { get; set; }
-        public virtual ICollection<TicketComments> TicketComments { get; set; }
-        public virtual ICollection<TicketHistories> TicketHistories { get; set; }
-        public virtual ICollection<TicketNotifications> TicketNotifications { get; set; }
+        public virtual ICollection<Project> Projects { get; set; }
+        public virtual ICollection<TicketAttachment> TicketAttachments { get; set; }
+        public virtual ICollection<Ticket> Tickets { get; set; }
+        public virtual ICollection<TicketComment> TicketComments { get; set; }
+        public virtual ICollection<TicketHistory> TicketHistories { get; set; }
+        public virtual ICollection<TicketNotification> TicketNotifications { get; set; }
 
 
         public async Task<ClaimsIdentity> GenerateUserIdentityAsync(UserManager<ApplicationUser> manager)
@@ -53,15 +53,15 @@ namespace Bugtracker.Models
         {
             return new ApplicationDbContext();
         }
-        public DbSet<Tickets> Tickets { get; set; }
-        public DbSet<TicketComments> TicketComments { get; set; }
-        public DbSet<Projects> Projects { get; set; }
-        public DbSet<TicketAttachments> TicketAttachments { get; set; }
-        public DbSet<TicketHistories> TicketHistories { get; set; }
-        public DbSet<TicketNotifications> TicketNotifications { get; set; }
-        public DbSet<TicketPriorities> TicketPriorities { get; set; }
-        public DbSet<TicketStatuses> TicketStatuses { get; set; }
-        public DbSet<TicketTypes> TicketTypes { get; set; }
+        public DbSet<Ticket> Tickets { get; set; }
+        public DbSet<TicketComment> TicketComments { get; set; }
+        public DbSet<Project> Projects { get; set; }
+        public DbSet<TicketAttachment> TicketAttachments { get; set; }
+        public DbSet<TicketHistory> TicketHistories { get; set; }
+        public DbSet<TicketNotification> TicketNotifications { get; set; }
+        public DbSet<TicketPriority> TicketPriorities { get; set; }
+        public DbSet<TicketStatus> TicketStatuses { get; set; }
+        public DbSet<TicketType> TicketTypes { get; set; }
 
     }
 }

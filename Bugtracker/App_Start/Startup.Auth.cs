@@ -6,6 +6,7 @@ using Microsoft.Owin.Security.Cookies;
 using Microsoft.Owin.Security.Google;
 using Owin;
 using Bugtracker.Models;
+using static Bugtracker.SmsService;
 
 namespace Bugtracker
 {
